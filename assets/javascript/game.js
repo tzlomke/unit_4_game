@@ -1,22 +1,21 @@
 // Global Variables
-var score = 0;
-var total = 0;
 var wins = 0;
 var losses = 0;
-var targetNumber;
-var crystal1;
-var crystal2;
-var crystal3;
-var crystal4;
-
-
 
 // New Game Function
-function newGame() {
-    total = 0;
+function game() {
 
-    // Random Number
-    targetNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+    // Sets Score to 0
+    var score = 0;
+
+    // Resets Counter Text
+    $("#counter").text(score);
+
+    // Random Target Number
+    var targetNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+
+    // Writes Random Target Number to DOM
+    $("#random-number").text(targetNumber);
     
     // Crystals Random Value
     crystal1 = Math.floor(Math.random() * (12) + 1);
@@ -24,52 +23,47 @@ function newGame() {
     crystal3 = Math.floor(Math.random() * (12) + 1);
     crystal4 = Math.floor(Math.random() * (12) + 1);
 
-    console.log(targetNumber);
-    console.log(crystal1);
-    console.log(crystal2);
-    console.log(crystal3);
-    console.log(crystal4);
-
-    // Write targetNumber to DOM
-    $("#random-number").text(targetNumber);
-
     // Click Events
         // Adds crystal value to score
         // Writes new score amount to DOM
-    $("#crystal-1").on("click", function() {
+    $("#crystal-1").off("click").on("click", function() {
         score += crystal1;
         $("#counter").text(score);
+        return false;
     })
 
-    $("#crystal-2").on("click", function() {
+    $("#crystal-2").off("click").on("click", function() {
         score += crystal2;
         $("#counter").text(score);
+        return false;
     })
 
-    $("#crystal-3").on("click", function() {
+    $("#crystal-3").off("click").on("click", function() {
         score += crystal3;
         $("#counter").text(score);
+        return false;
     })
 
-    $("#crystal-4").on("click", function() {
+    $("#crystal-4").off("click").on("click", function() {
         score += crystal4;
         $("#counter").text(score);
+        return false;
     })
 
     // Win & Loss Checker
-        // Writes wins to DOM
-        // Triggers New Game and keeps win count
-    if (score === targetNumber) {
-        wins++;
-        $("#win").text(wins);
-        newGame();
-    } else if (score > targetNumber) {
-        losses++;
-        $("#loss").text(losses);
-        newGame();
-    }
-
-    
+    $(".crystals").on("click", function() {
+        if (score === targetNumber) {
+            wins++;
+            $("#win").text(wins);
+            $("#result-message").text("You won!");
+            game();
+        } else if (score >= targetNumber) {
+            losses++;
+            $("#result-message").text("You lost!");
+            $("#loss").text(losses);
+            game();
+        }
+    })  
 }
 
-newGame()
+game()
