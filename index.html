@@ -23,26 +23,29 @@
         <p>Each time a new game starts, the values of each crystal will change.</p>
     </div>
 
-    <div class="random-number">
-        <span id="random-number"></span>
+    <div>
+        <h2><span id="random-number"></span></h2>
     </div>
 
-    <div class="win-loss">
+    <div class="record">
         <h2>Wins: <span id="win"></span></h2>
         <h2>Losses: <span id="loss"></span></h2>
     </div>
 
     <div class="crystals">
-        <img src="assets/images/crystal1.jpg" height=250 width=250>
-        <img src="assets/images/crystal2.jpg" height=250 width=250>
-        <img src="assets/images/crystal3.jpg" height=250 width=250>
-        <img src="assets/images/crystal4.jpg" height=250 width=250>
+        <img id="crystal-1" src="assets/images/crystal1.jpg" height=250 width=250>
+        <img id="crystal-2" src="assets/images/crystal2.jpg" height=250 width=250>
+        <img id="crystal-3" src="assets/images/crystal3.jpg" height=250 width=250>
+        <img id="crystal-4" src="assets/images/crystal4.jpg" height=250 width=250>
     </div>
 
-    <div class="score">
-        <h3>Your total score is:</h3>
-        <h2 id="score">0</h2>
+    <div class="scoreboard">
+        <h2>Your total score is: <span id="counter"></span></h2> 
     </div>
     
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javscript -->
+    <script type ="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
