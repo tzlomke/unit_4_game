@@ -1,0 +1,19 @@
+html,
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url("../../assets/images/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: fill;
+    color: white;
+    font-size: 18px;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 26px;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: 22px;
+}

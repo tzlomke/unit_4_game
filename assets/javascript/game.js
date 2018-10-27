@@ -2,7 +2,7 @@
 var wins = 0;
 var losses = 0;
 
-// New Game Function
+// Game Function
 function game() {
 
     // Sets Score to 0
@@ -23,9 +23,15 @@ function game() {
     crystal3 = Math.floor(Math.random() * (12) + 1);
     crystal4 = Math.floor(Math.random() * (12) + 1);
 
+    console.log(crystal1);
+    console.log(crystal2);
+    console.log(crystal3);
+    console.log(crystal4);
+
     // Click Events
         // Adds crystal value to score
         // Writes new score amount to DOM
+        // .off("click") gets rid of old event listener
     $("#crystal-1").off("click").on("click", function() {
         score += crystal1;
         $("#counter").text(score);
@@ -66,4 +72,5 @@ function game() {
     })  
 }
 
+// Starts Game on Page Load
 game()
