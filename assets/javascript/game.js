@@ -23,11 +23,6 @@ function game() {
     crystal3 = Math.floor(Math.random() * (12) + 1);
     crystal4 = Math.floor(Math.random() * (12) + 1);
 
-    console.log(crystal1);
-    console.log(crystal2);
-    console.log(crystal3);
-    console.log(crystal4);
-
     // Click Events
         // Adds crystal value to score
         // Writes new score amount to DOM
