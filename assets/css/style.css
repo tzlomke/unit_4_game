@@ -1,11 +1,18 @@
 html,
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 18px;
+}
+
+html {
     background-image: url("../../assets/images/background1.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    color: white;
-    font-size: 18px;
+}
+
+body {
+    padding: 25px;
 }
 
 h1 {
